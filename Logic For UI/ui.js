@@ -8,12 +8,12 @@ var popbox = document.getElementById('popbox');
 var workspace = document.getElementById('workspace');
 
 
+///This part is needed to configure fiber-js (git://github.com/kangax/fiberjs)
 //This is for drawing gates
 	var txt = {},
     txtWidth = 85, 
     txtHeight = 18;
-    //Actually btn, should have been text 
- //Gates Var Declaration End
+//Gates Var Declaration End
 
 function ui(type){
 	
@@ -116,6 +116,10 @@ function createTextBox(id, value){
 }
 
 
+///The two functions from now were copied and modified 
+///Original source: http://fiberjs.com/demo
+///Under Interacting with external elements
+
 //For drawing gates, and attatching textboxes to it.
 function AttatchTextBoxToGate(textbox_id, gatePath){
 	var canvas = new fabric.Canvas('c');
@@ -145,6 +149,8 @@ function AttatchTextBoxToGate(textbox_id, gatePath){
   	txt.style.left = (absCoords.left - txtWidth / 2) + 'px';
   	txt.style.top = (absCoords.top - txtHeight / 2) + 'px';
 	}
+
+///Copied Function end
 
 //This is mimicking observable pattern in javascript
 
