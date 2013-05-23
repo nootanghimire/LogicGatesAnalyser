@@ -81,7 +81,7 @@ function submitCode(formObj){
 	}
 	createTextBoxReadOnly("opbox_"+counter);
 	outputs.push("opbox_"+counter);
-	onclickFn(logic);
+	onclickFns(logic);
 
 }
 
@@ -192,5 +192,4 @@ function ChangeMe(listenerArray, changeToValue){
 		document.getElementById(listenerArray[i]).value = changeToValue;
 	}
 }
-
 //End Observable Pattern
