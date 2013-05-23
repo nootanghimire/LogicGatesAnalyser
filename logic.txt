@@ -1,0 +1,6 @@
+struct {
+	int id;
+	int fn_name;
+	
+
+}

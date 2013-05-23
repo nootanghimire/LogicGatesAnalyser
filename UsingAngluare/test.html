@@ -1,0 +1,27 @@
+<html ng-app> 
+<head>
+	<title>Angular js example</title>
+	<script src="angular/angular.js"></script>
+	<script>
+		function mainController(scope){
+			///...do thingy's here
+			scope.list= [
+			{"name": "and",
+			  "func": "ANDs two input "},
+			{"name": "or",
+			"func": "ORs two input "},
+			{"name": "not",
+			"func": "NOTs one input "}
+			];
+			
+
+		}
+	</script>
+</head>
+
+<body ng-controller="mainController">
+	<div id="workspace" ng-repeat>
+		<h1>{{list.name}}</h1>
+		<h2>{{list.func}}</h2>
+	</div>
+</body>

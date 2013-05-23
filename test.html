@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Basic Gates Analyser</title>
+	<script type="text/javascript" src="gates.js"></script>
+	<script type="text/javascript" src="experience.js"></script>
+</head>
+<body>
+	<div id="workspace">This Contains WorksPace</div>
+	<br><br><br><br>
+	<select name="gate_select" id="gate_select">
+		<option value="and">And Gate</option>
+		<option value="or">Or Gate</option>
+		<option value="not">Not Gate</option>
+		<option value="nor">Nor Gate</option>
+		<option value="nand">Nand Gate</option>
+		<option value="xor">Xor Gate</option>
+		<option value="xnor">XNor Gate</option>
+	</select>
+	<button type="button" id="gate_btn" onclick="getGate();">Select Gate!</button>
+
+	<br><br>
+	<input id="ip1" value="1">
+	<input id="ip2" value="1">
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://fabricjs.com/interaction-with-objects-outside-canvas/ -->
+<html lang="en"><meta style="visibility: hidden !important; display: block !important; width: 0px !important; height: 0px !important; border-style: none !important;"><embed id="__IDM__" type="application/x-idm-downloader" width="1" height="1" style="visibility: hidden !important; display: block !important; width: 1px !important; height: 1px !important; border-style: none !important; position: absolute !important; top: 0px !important; left: 0px !important;"></meta><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <title>Interaction with objects outside canvas | Fabric.js Demos</title>
+
+    <link rel="stylesheet" href="http://fabricjs.com/css/master.css">
+    <link rel="stylesheet" href="http://fabricjs.com/css/prism.css">
+    <style>
+      pre { margin-left: 15px !important }
+    </style>
+
+    <!--[if lt IE 9]>
+      <script src="../lib/excanvas.js"></script>
+    <![endif]-->
+
+    <script async="" src="./Interaction with objects outside canvas   Fabric.js Demos_files/load.js"></script><script id="twitter-wjs" src="./Interaction with objects outside canvas   Fabric.js Demos_files/widgets.js"></script><script type="text/javascript" async="" src="./Interaction with objects outside canvas   Fabric.js Demos_files/ga.js"></script><script src="./Interaction with objects outside canvas   Fabric.js Demos_files/prism.js"></script>
+    <script src="./Interaction with objects outside canvas   Fabric.js Demos_files/master.js"></script>
+    <script src="./Interaction with objects outside canvas   Fabric.js Demos_files/fabric.js"></script><style type="text/css">.cufon-canvas{text-indent:0}@media screen,projection{.cufon-canvas{display:inline;display:inline-block;position:relative;vertical-align:middle;font-size:1px;line-height:1px}.cufon-canvas .cufon-alt{display:-moz-inline-box;display:inline-block;width:0;height:0;overflow:hidden}.cufon-canvas canvas{position:relative}}@media print{.cufon-canvas{padding:0 !important}.cufon-canvas canvas{display:none}.cufon-canvas .cufon-alt{display:inline}}</style>
+  </head>
+  <body data-twttr-rendered="true">
+    <ul id="header">
+  <li><a href="http://fabricjs.com/">Features</a></li>
+  <li><a href="http://fabricjs.com/demos">Demos</a></li>
+  <li><a href="http://fabricjs.com/docs">Docs</a></li>
+  <li><a href="http://fabricjs.com/articles">Tutorial</a></li>
+  <li><a href="http://fabricjs.com/test">Tests</a></li>
+  <li><a href="http://fabricjs.com/benchmarks">Benchmarks</a></li>
+  <li class="secondary">
+    <a href="http://travis-ci.org/#!/kangax/fabric.js"><img src="./Interaction with objects outside canvas   Fabric.js Demos_files/fabric.js.png"></a>
+  </li>
+  <li class="gittip secondary">
+    <iframe style="border: 0; margin: 0; padding: 0;" src="./Interaction with objects outside canvas   Fabric.js Demos_files/widget.htm" width="48pt" height="22pt"></iframe>
+  </li>
+  <li class="flattr secondary">
+    <iframe src="./Interaction with objects outside canvas   Fabric.js Demos_files/saved_resource.htm" class="FlattrButton" width="110" height="20" frameborder="0" scrolling="no" title="Flattr" border="0" marginheight="0" marginwidth="0" allowtransparency="true"></iframe>
+    <noscript>&lt;a href="http://flattr.com/thing/391332/Fabric-js" target="_blank"&gt;
+    &lt;img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /&gt;&lt;/a&gt;</noscript>
+  </li>
+  <li class="github secondary">
+    <iframe src="./Interaction with objects outside canvas   Fabric.js Demos_files/github-btn.htm" allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
+  </li>
+  <li class="twitter secondary">
+    <iframe allowtransparency="true" frameborder="0" scrolling="no" src="./Interaction with objects outside canvas   Fabric.js Demos_files/follow_button.1368146021.htm" class="twitter-follow-button twitter-follow-button" style="width: 215px; height: 20px;" title="Twitter Follow Button" data-twttr-rendered="true"></iframe>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </li>
+  <li class="secondary"><a href="http://stackoverflow.com/questions/tagged/fabricjs"><span>StackOverflow</span></a></li>
+  <li class="secondary"><a href="https://github.com/kangax/fabric.js/wiki"><span>Wiki</span></a></li>
+  <li class="secondary"><a href="http://groups.google.com/group/fabricjs"><span>Discussion</span></a></li>
+</ul>
+
+<script>
+(function() {
+
+  var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+  s.async = true;
+  s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+  t.parentNode.insertBefore(s, t);
+
+  if (document.location.hostname === 'localhost') {
+    var links = document.getElementById('header').getElementsByTagName('a');
+    for (var i = 0, len = links.length; i < len; i++) {
+      // very retarted fix but fuck it
+      links[i].href = links[i].href.replace('fabricjs.com', 'localhost:4000');
+    }
+  }
+})();
+</script>
+
+
+    <div id="bd-wrapper">
+      <h2><span>Fabric.js demos</span> · Interaction with objects outside canvas</h2>
+
+      <div class="canvas-container" style="width: 500px; height: 500px; position: relative; -webkit-user-select: none;"><canvas id="c" width="500" height="500" class="lower-canvas" style="position: absolute; width: 500px; height: 500px; left: 0px; top: 0px; -webkit-user-select: none;"></canvas><canvas class="upper-canvas" style="position: absolute; width: 500px; height: 500px; left: 0px; top: 0px; -webkit-user-select: none; cursor: default;" width="500" height="500"></canvas></div>
+<input type="button" value="Some button" id="inline-btn" style="position: absolute; left: 205.39189721966386px; top: 335.62733318932084px;">
+
+<script id="main">var canvas = new fabric.Canvas('c');
+
+fabric.Canvas.prototype.getAbsoluteCoords = function(object) {
+  return {
+    left: object.left + this._offset.left,
+    top: object.top + this._offset.top
+  };
+}
+
+var btn = document.getElementById('inline-btn'),
+    btnWidth = 85,
+    btnHeight = 18;
+
+function positionBtn(obj) {
+  var absCoords = canvas.getAbsoluteCoords(obj);
+
+  btn.style.left = (absCoords.left - btnWidth / 2) + 'px';
+  btn.style.top = (absCoords.top - btnHeight / 2) + 'px';
+}
+
+fabric.Image.fromURL('../lib/pug.jpg', function(img) {
+
+  canvas.add(img.set({ left: 250, top: 250, angle: 30 }).scale(0.25));
+
+  img.on('moving', function() { positionBtn(img) });
+  positionBtn(img);
+});
+
+</script>
+    <pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> canvas <span class="token operator">=</span> <span class="token keyword">new</span> fabric<span class="token punctuation">.</span>Canvas<span class="token punctuation">(</span><span class="token string">'c'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+fabric<span class="token punctuation">.</span>Canvas<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>getAbsoluteCoords <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    left<span class="token punctuation">:</span> object<span class="token punctuation">.</span>left <span class="token operator">+</span> this<span class="token punctuation">.</span>_offset<span class="token punctuation">.</span>left<span class="token punctuation">,</span>
+    top<span class="token punctuation">:</span> object<span class="token punctuation">.</span>top <span class="token operator">+</span> this<span class="token punctuation">.</span>_offset<span class="token punctuation">.</span>top
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span>getElementById<span class="token punctuation">(</span><span class="token string">'inline-btn'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    btnWidth <span class="token operator">=</span> <span class="token number">85</span><span class="token punctuation">,</span>
+    btnHeight <span class="token operator">=</span> <span class="token number">18</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> positionBtn<span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> absCoords <span class="token operator">=</span> canvas<span class="token punctuation">.</span>getAbsoluteCoords<span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  btn<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token punctuation">(</span>absCoords<span class="token punctuation">.</span>left <span class="token operator">-</span> btnWidth <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+  btn<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top <span class="token operator">=</span> <span class="token punctuation">(</span>absCoords<span class="token punctuation">.</span>top <span class="token operator">-</span> btnHeight <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+fabric<span class="token punctuation">.</span>Image<span class="token punctuation">.</span>fromURL<span class="token punctuation">(</span><span class="token string">'../lib/pug.jpg'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  canvas<span class="token number">.add</span><span class="token punctuation">(</span>img<span class="token punctuation">.</span>set<span class="token punctuation">(</span><span class="token punctuation">{</span> left<span class="token punctuation">:</span> <span class="token number">250</span><span class="token punctuation">,</span> top<span class="token punctuation">:</span> <span class="token number">250</span><span class="token punctuation">,</span> angle<span class="token punctuation">:</span> <span class="token number">30</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>scale<span class="token punctuation">(</span><span class="token number">0.25</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  img<span class="token punctuation">.</span>on<span class="token punctuation">(</span><span class="token string">'moving'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> positionBtn<span class="token punctuation">(</span>img<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  positionBtn<span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div>
+
+    <script>
+      (function(){
+        var mainScriptEl = document.getElementById('main');
+        if (!mainScriptEl) return;
+        var preEl = document.createElement('pre');
+        var codeEl = document.createElement('code');
+        codeEl.innerHTML = mainScriptEl.innerHTML;
+        codeEl.className = 'language-javascript';
+        preEl.appendChild(codeEl);
+        document.getElementById('bd-wrapper').appendChild(preEl);
+      })();
+    </script>
+  
+
+<div class="drop-hint" id="drop-to-share-hint" style="background-image: url(chrome-extension://cipmepknanmbbaneimacddfemfbfgpgo/images/content/dropToShareHint.png); background-size: 67px 327px; display: none;"><a class="share-btn-close"></a><a class="btn-options"></a><div class="drop-hint-bubble" id="drop-hint-bubble-share" style="background-image: url(chrome-extension://cipmepknanmbbaneimacddfemfbfgpgo/images/content/dropToShareHintBubble.png); background-size: 253px 79px; display: none;"></div></div><div class="drop-hint" id="drop-to-search-hint" style="background-image: url(chrome-extension://cipmepknanmbbaneimacddfemfbfgpgo/images/content/dropToSearchHint.png); background-size: 67px 327px; display: none;"><a class="search-btn-close"></a><a class="btn-options"></a><div class="drop-hint-bubble" id="drop-hint-bubble-search" style="background-image: url(chrome-extension://cipmepknanmbbaneimacddfemfbfgpgo/images/content/dropToSearchHintBubble.png); background-size: 215px 79px; display: none;"></div></div></body></html>

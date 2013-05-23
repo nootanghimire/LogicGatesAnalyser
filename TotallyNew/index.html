@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>Logic Analyser</title>
+	<style type="text/css">
+
+.msgbox {
+	/*#F60->orange, #093->green, #F33->red*/
+	cursor:pointer;
+	position:absolute;
+	text-align:center;
+	left:30%;	
+	top:386px;
+	width:550px;
+	height:70px;
+	background:#093;
+	border: inset #999 medium;
+	border-left:none !important;
+	border-top: none !important;
+	color:#fff;
+	font-weight:bold;
+	font-family:"Segoe UI";
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:10px;
+	letter-spacing:normal;
+	z-index:1;
+	border-radius:3px;
+  
+}
+
+	</style>
+</head>
+<body>
+	<div id="workspace">
+	</div>
+	<div id="gates">
+		<button id="and" onclick="btnClick(this);">AND</button>
+		<button id="not" onclick="btnClick(this);">NOT</button>
+		<button id="or" onclick="btnClick(this);">OR</button>
+	</div>
+
+	<div id="popbox" class="msgbox" style="display:none;">
+		<form id="form1">
+			<input type="text" name="ip1" id="ip1" value="0" />
+			<input type="text" name="ip2" id="ip2" value="0" />
+			<button type="button" onclick="submitCode(document.getElementById('form1'));">Ok!</button>
+		</form>
+	</div>
+	<!-- Add Scripts at last -->
+	<script type="text/javascript" src="gateJs.js"></script>
+</body>
+</html>
