@@ -49,7 +49,8 @@ function submitCode(formObj){
 	if(ip_select_1 == -99) {
 		//We got input
 		createTextBox("ipbox_"+counter+ "_1",ip_input_1); //Make textboxes outta same pattern)
-		//AttatchTextBoxToGate(id, "input1", gate_id);
+		//AttatchTextBoxToGate("ipbox_"+counter+ "_1", );
+		//Assumes gate.var2path.js is included. 
 		
 	}
 	else
