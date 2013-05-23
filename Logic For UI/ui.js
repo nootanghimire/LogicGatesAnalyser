@@ -1,4 +1,3 @@
-
 var outputs = []; //array of strings containing output box names 
 var gateArray =[]; //to push objects.
 var finalGateId ; //Final output?
@@ -29,9 +28,8 @@ function ui(type){
 	}
 	popbox.innerHTML = '<form id="form1"><select id="inp_1_sel">' + select_contents + '</select> Or <input type="text" value="0"/>' + '<br><select id="inp_2_sel">'+ select_contents + '</select> Or <input type="text" value="0" />' +'<br><input type="hidden" value="'+ type + '" /></form>';
 	popbox.innerHTML += '<br><button onclick="submitCode(document.getElementById(\'form1\'));">Go!</button>';
-	alert("reached");
 	popbox.style.display= "inline";
-	alert("reached2");
+	
 	
 	//show code
 
